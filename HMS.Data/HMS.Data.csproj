@@ -37,6 +37,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,6 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HMSContext.cs" />
+    <Compile Include="Migrations\201908160758287_BasicEntities.cs" />
+    <Compile Include="Migrations\201908160758287_BasicEntities.Designer.cs">
+      <DependentUpon>201908160758287_BasicEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908161115244_Identityframeworkreference.cs" />
+    <Compile Include="Migrations\201908161115244_Identityframeworkreference.Designer.cs">
+      <DependentUpon>201908161115244_Identityframeworkreference.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +75,14 @@
       <Project>{8E8254E0-CCBC-4A07-A9DA-629FD005953F}</Project>
       <Name>HMS.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908160758287_BasicEntities.resx">
+      <DependentUpon>201908160758287_BasicEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908161115244_Identityframeworkreference.resx">
+      <DependentUpon>201908161115244_Identityframeworkreference.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
